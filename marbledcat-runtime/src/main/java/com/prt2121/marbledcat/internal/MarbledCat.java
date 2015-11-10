@@ -20,16 +20,10 @@ import org.aspectj.lang.reflect.MethodSignature;
 
   private final ConcurrentSkipListSet<Integer> lineSet = new ConcurrentSkipListSet<>();
 
-  @Pointcut(value = "execution(* rx.functions.Func1.call(..))") public void func1Call() {
-  }
-
-  @Pointcut(value = "execution(* rx.functions.Func2.call(..))") public void func2Call() {
+  @Pointcut(value = "execution(* rx.functions.Func.call(..))") public void funcCall() {
   }
 
   @Pointcut(value = "execution(* rx.functions.Action0.call(..))") public void action0Call() {
-  }
-
-  @Pointcut(value = "execution(* rx.functions.Action1.call(..))") public void action1Call() {
   }
 
   @Around("action0Call()") public Object aroundAction0Call(ProceedingJoinPoint joinPoint)
@@ -37,7 +31,7 @@ import org.aspectj.lang.reflect.MethodSignature;
     Object result = joinPoint.proceed();
     if (enabled) {
       StringBuilder builder = new StringBuilder();
-      buildPrefix(joinPoint, builder);
+      //addThread(joinPoint, builder);
       Signature signature = joinPoint.getSignature();
       Class<?> cls = signature.getDeclaringType();
       Log.v(asTag(cls), builder.append(" \u2601 ").toString());
@@ -45,17 +39,7 @@ import org.aspectj.lang.reflect.MethodSignature;
     return result;
   }
 
-  @Around("action1Call()") public Object aroundAction1Call(ProceedingJoinPoint joinPoint)
-      throws Throwable {
-    return log(joinPoint);
-  }
-
-  @Around("func1Call()") public Object aroundFunc1Call(ProceedingJoinPoint joinPoint)
-      throws Throwable {
-    return log(joinPoint);
-  }
-
-  @Around("func2Call()") public Object aroundFunc2Call(ProceedingJoinPoint joinPoint)
+  @Around("funcCall()") public Object aroundFuncCall(ProceedingJoinPoint joinPoint)
       throws Throwable {
     return log(joinPoint);
   }
@@ -71,10 +55,10 @@ import org.aspectj.lang.reflect.MethodSignature;
   }
 
   private void enter(JoinPoint joinPoint, StringBuilder builder) {
-    int line = buildPrefix(joinPoint, builder);
+    int line = addThread(joinPoint, builder);
     int tab = lineSet.headSet(line).size();
     for (int i = 0; i < tab; i++) {
-      builder.append("\t\u21e2  ");
+      builder.append("\t\u21E3  ");
     }
     CodeSignature codeSignature = (CodeSignature) joinPoint.getSignature();
     Object[] parameterValues = joinPoint.getArgs();
@@ -90,20 +74,14 @@ import org.aspectj.lang.reflect.MethodSignature;
 
   // add prefix (thread hash line) to StringBuilder and return line
   // i.e. RxComputationThreadPool-1	64f7292	54
-  private int buildPrefix(JoinPoint joinPoint, StringBuilder builder) {
+  private int addThread(JoinPoint joinPoint, StringBuilder builder) {
     if (Looper.myLooper() == Looper.getMainLooper()) {
       builder.append("MainThread               "); // 25 chars
     } else {
       builder.append(String.format("%25s", Thread.currentThread().getName()));
     }
     builder.append("\t");
-    int hashCode = joinPoint.getTarget().hashCode();
-    builder.append(String.format("%10s", Integer.toHexString(hashCode)));
-    builder.append("\t");
     int line = joinPoint.getSourceLocation().getLine();
-    builder.append(String.format("%4s", line));
-    builder.append("\t");
-
     lineSet.add(line);
     return line;
   }
