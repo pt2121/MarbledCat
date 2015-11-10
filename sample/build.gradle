@@ -1,13 +1,6 @@
 apply plugin: 'com.android.application'
 apply plugin: 'com.prt2121.marbledcat'
 
-// remove this
-repositories {
-  maven {
-    url uri('../repo')
-  }
-}
-
 android {
   compileSdkVersion 23
   buildToolsVersion '23.0.1'
@@ -45,5 +38,6 @@ dependencies {
   compile 'com.jakewharton.rxbinding:rxbinding-recyclerview-v7:0.3.0'
   compile 'com.jakewharton:butterknife:7.0.1'
   compile 'com.google.code.gson:gson:2.4'
-  compile project(':marbledcat-annotation')
+  //compile project(':marbledcat-annotation')
+  compile 'com.github.prt2121:marbledcat-annotation:0.3.0'
 }
