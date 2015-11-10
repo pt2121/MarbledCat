@@ -39,5 +39,5 @@ dependencies {
   compile 'com.jakewharton:butterknife:7.0.1'
   compile 'com.google.code.gson:gson:2.4'
   //compile project(':marbledcat-annotation')
-  compile 'com.github.prt2121:marbledcat-annotation:0.3.0'
+  compile 'com.github.prt2121:marbledcat-annotation:0.4.0'
 }
