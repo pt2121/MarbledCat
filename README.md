@@ -26,7 +26,7 @@ Rx Marble diagram in your logcat.
     compile fileTree(dir: 'libs', include: ['*.jar'])
     testCompile 'junit:junit:4.12'
     ...
-    compile 'com.github.prt2121:marbledcat-annotation:0.3.0' // add marbledcat-annotation dependency
+    compile 'com.github.prt2121:marbledcat-annotation:0.4.0' // add marbledcat-annotation dependency
   }
   ```
 * In the class that you need to log add RxLog annotation.
