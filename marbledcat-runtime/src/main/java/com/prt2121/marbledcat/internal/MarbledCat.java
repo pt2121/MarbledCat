@@ -20,7 +20,7 @@ import org.aspectj.lang.reflect.MethodSignature;
 
   private final ConcurrentSkipListSet<Integer> lineSet = new ConcurrentSkipListSet<>();
 
-  @Pointcut(value = "execution(* rx.functions.Func.call(..))") public void funcCall() {
+  @Pointcut(value = "execution(* rx.functions.*.call(..))") public void funcCall() {
   }
 
   @Pointcut(value = "execution(* rx.functions.Action0.call(..))") public void action0Call() {

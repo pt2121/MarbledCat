@@ -26,7 +26,7 @@ class MarbledCatPlugin implements Plugin<Project> {
     }
 
     project.dependencies {
-      debugCompile 'com.github.prt2121:marbledcat-runtime:0.3.0'
+      debugCompile 'com.github.prt2121:marbledcat-runtime:0.3.4'
       // TODO this should come transitively
       debugCompile 'org.aspectj:aspectjrt:1.8.6'
     }

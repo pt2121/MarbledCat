@@ -3,7 +3,7 @@ import org.aspectj.bridge.MessageHandler
 import org.aspectj.tools.ajc.Main
 
 apply plugin: 'com.android.library'
-apply plugin: 'com.github.dcendents.android-maven'
+//apply plugin: 'com.github.dcendents.android-maven'
 
 android {
   compileSdkVersion 23
@@ -71,7 +71,7 @@ ext {
   siteUrl = 'https://github.com/prt2121/MarbledCat'
   gitUrl = 'https://github.com/prt2121/MarbledCat.git'
 
-  libraryVersion = '0.3.0'
+  libraryVersion = '0.3.4'
 
   developerId = 'prt2121'
   developerName = 'Prat Tanapaisankit'
