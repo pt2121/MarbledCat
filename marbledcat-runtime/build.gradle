@@ -58,29 +58,29 @@ android.libraryVariants.all { variant ->
   }
 }
 
-ext {
-  bintrayRepo = 'maven'
-  bintrayName = 'marbled-cat'
-
-  publishedGroupId = 'com.github.prt2121'
-  libraryName = 'MarbledCat Runtime'
-  artifact = 'marbledcat-runtime'
-
-  libraryDescription = 'RxJava method call logging for Android debug builds'
-
-  siteUrl = 'https://github.com/prt2121/MarbledCat'
-  gitUrl = 'https://github.com/prt2121/MarbledCat.git'
-
-  libraryVersion = '0.3.4'
-
-  developerId = 'prt2121'
-  developerName = 'Prat Tanapaisankit'
-  developerEmail = 'banqfirn@gmail.com'
-
-  licenseName = 'The Apache Software License, Version 2.0'
-  licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
-  allLicenses = ["Apache-2.0"]
-}
-
-apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/installv1.gradle'
-apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/bintrayv1.gradle'
+//ext {
+//  bintrayRepo = 'maven'
+//  bintrayName = 'marbled-cat'
+//
+//  publishedGroupId = 'com.github.prt2121'
+//  libraryName = 'MarbledCat Runtime'
+//  artifact = 'marbledcat-runtime'
+//
+//  libraryDescription = 'RxJava method call logging for Android debug builds'
+//
+//  siteUrl = 'https://github.com/prt2121/MarbledCat'
+//  gitUrl = 'https://github.com/prt2121/MarbledCat.git'
+//
+//  libraryVersion = '0.3.4'
+//
+//  developerId = 'prt2121'
+//  developerName = 'Prat Tanapaisankit'
+//  developerEmail = 'banqfirn@gmail.com'
+//
+//  licenseName = 'The Apache Software License, Version 2.0'
+//  licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+//  allLicenses = ["Apache-2.0"]
+//}
+//
+//apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/installv1.gradle'
+//apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/bintrayv1.gradle'
