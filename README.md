@@ -4,8 +4,11 @@ MarbledCat
 ####Rx Marble diagram in logcat.
 
 [![Build Status](https://travis-ci.org/prt2121/MarbledCat.svg?branch=master)](https://travis-ci.org/prt2121/MarbledCat)
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.prt2121/marbledcat-plugin/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.github.prt2121/marbledcat-plugin)
 
 MarbledCat allows developers to visualize Rx streams in Android logcat by applying Aspect-oriented programming techniques to inject logging code into RxJava method calls.
+
+![screenshot](https://raw.githubusercontent.com/prt2121/MarbledCat/master/assets/screenshot.png)
 
 ![screen record](https://raw.githubusercontent.com/prt2121/MarbledCat/master/assets/vid.gif)
 
@@ -47,9 +50,10 @@ MarbledCat allows developers to visualize Rx streams in Android logcat by applyi
   public class AwesomeActivity extends AppCompatActivity {
   ```
 
-![screenshot](https://raw.githubusercontent.com/prt2121/MarbledCat/master/assets/screenshot.png)
-
 #### [Release page](https://github.com/prt2121/MarbledCat/releases)
+
+#### Limitation
+* The log printed correctly only when one class is annotated.
 
 #### Thanks/Credits/Inspiration
 
